@@ -129,5 +129,5 @@ install -p -m 644 Documents/veusz.1.xz Documents/veusz_listen.1.xz \
 
 %files -n python-%{name}
 %doc README AUTHORS COPYING ChangeLog
-%{py_sitedir}/%{name}
-%{py_sitedir}/%{name}-%{version}-py%{py_ver}.egg-info
+%{python_sitearch}/%{name}
+%{python_sitearch}/%{name}-%{version}-py%{py_ver}.egg-info
