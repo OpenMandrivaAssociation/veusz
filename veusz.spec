@@ -1,12 +1,12 @@
 Name:           veusz
-Version:        1.14
+Version:        1.15
 Release:        1
 # The entire source code is GPLv2+ except helpers/src/_nc_cntr.c which is Python
 License:        GPLv2+ and Python license
 Summary:        GUI scientific plotting package
 Url:            http://home.gna.org/veusz/
 Group:          Sciences/Mathematics
-Source0:        %{name}-%{version}.tar.gz
+Source0:        http://download.gna.org/veusz/%{name}-%{version}.tar.gz
 BuildRequires:  desktop-file-utils
 BuildRequires:  qt4-devel
 BuildRequires:  python-numpy-devel
@@ -53,13 +53,13 @@ sed -i "/f =/s+utils.veuszDirectory+'%{_docdir}/%{name}'+" \
         %{_builddir}/veusz-%{version}/dialogs/aboutdialog.py
 
 %build
-CFLAGS="%{optflags}"
+%setup_compile_flags
 python setup.py build
 xz -k Documents/veusz*.1
 
 %install
-python setup.py install -O1 --skip-build --prefix="%{_prefix}" \
-                                              --root=%{buildroot}
+PYTHONDONTWRITEBYTECODE= python setup.py install \
+	-O1 --skip-build --prefix="%{_prefix}" --root=%{buildroot}
 
 # install desktop file
 install -d %{buildroot}%{_datadir}/applications
