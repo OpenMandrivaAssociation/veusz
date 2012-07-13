@@ -1,5 +1,11 @@
+%if %{_use_internal_dependency_generator}
+%define         __noautoprov '\\.so'
+%else
+%define         _provides_exceptions \\.so
+%endif
+
 Name:           veusz
-Version:        1.15
+Version:        1.16
 Release:        1
 # The entire source code is GPLv2+ except helpers/src/_nc_cntr.c which is Python
 License:        GPLv2+ and Python license
