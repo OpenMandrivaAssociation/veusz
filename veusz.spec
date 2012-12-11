@@ -6,7 +6,7 @@
 
 Name:           veusz
 Version:        1.16
-Release:        1
+Release:        2
 # The entire source code is GPLv2+ except helpers/src/_nc_cntr.c which is Python
 License:        GPLv2+ and Python license
 Summary:        GUI scientific plotting package
@@ -19,6 +19,7 @@ BuildRequires:  python-numpy-devel
 BuildRequires:  python-qt4-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-sip
+BuildRequires:  pkgconfig(lapack)
 Requires:       python-numpy
 Requires:       python-qt4
 Requires:	python-%{name} = %{version}-%{release}
@@ -137,3 +138,20 @@ install -p -m 644 Documents/veusz.1.xz Documents/veusz_listen.1.xz \
 %doc README AUTHORS COPYING ChangeLog
 %{python_sitearch}/%{name}
 %{python_sitearch}/%{name}-%{version}-py%{py_ver}.egg-info
+
+
+%changelog
+* Fri Jul 13 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 1.16-1
++ Revision: 809181
+- new version 2.16
+- dont provide private *.so
+
+* Thu Apr 05 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 1.15-1
++ Revision: 789391
+- update to 1.15
+
+* Tue Dec 06 2011 Dmitry Mikhirev <dmikhirev@mandriva.org> 1.14-1
++ Revision: 738242
+- Files paths fixed
+- imported package veusz
+
