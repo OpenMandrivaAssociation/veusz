@@ -6,7 +6,7 @@
 
 Name:           veusz
 Version:        1.16
-Release:        2
+Release:        3
 # The entire source code is GPLv2+ except helpers/src/_nc_cntr.c which is Python
 License:        GPLv2+ and Python license
 Summary:        GUI scientific plotting package
