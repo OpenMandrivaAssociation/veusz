@@ -10,7 +10,7 @@ Release:        3
 # The entire source code is GPLv2+ except helpers/src/_nc_cntr.c which is Python
 License:        GPLv2+ and Python license
 Summary:        GUI scientific plotting package
-Url:            http://home.gna.org/veusz/
+Url:            https://home.gna.org/veusz/
 Group:          Sciences/Mathematics
 Source0:        http://download.gna.org/veusz/%{name}-%{version}.tar.gz
 BuildRequires:  desktop-file-utils
